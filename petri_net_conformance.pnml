@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="talleres" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>talleres</text>
+    </name>
+    <page id="n0">
+      <place id="p_2">
+        <name>
+          <text>p_2</text>
+        </name>
+      </place>
+      <place id="sink">
+        <name>
+          <text>sink</text>
+        </name>
+      </place>
+      <place id="p_4">
+        <name>
+          <text>p_4</text>
+        </name>
+      </place>
+      <place id="p_5">
+        <name>
+          <text>p_5</text>
+        </name>
+      </place>
+      <place id="p_6">
+        <name>
+          <text>p_6</text>
+        </name>
+      </place>
+      <place id="p_8">
+        <name>
+          <text>p_8</text>
+        </name>
+      </place>
+      <place id="p_9">
+        <name>
+          <text>p_9</text>
+        </name>
+      </place>
+      <place id="p_10">
+        <name>
+          <text>p_10</text>
+        </name>
+      </place>
+      <place id="p_11">
+        <name>
+          <text>p_11</text>
+        </name>
+      </place>
+      <place id="source">
+        <name>
+          <text>source</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="p_1">
+        <name>
+          <text>p_1</text>
+        </name>
+      </place>
+      <place id="p_3">
+        <name>
+          <text>p_3</text>
+        </name>
+      </place>
+      <transition id="revisar_gases">
+        <name>
+          <text>Revisar gases</text>
+        </name>
+      </transition>
+      <transition id="revisar_amortiguacion_y_direccion">
+        <name>
+          <text>Revisar amortiguacion y direccion</text>
+        </name>
+      </transition>
+      <transition id="revisar_luces">
+        <name>
+          <text>Revisar luces</text>
+        </name>
+      </transition>
+      <transition id="revisar_frenos">
+        <name>
+          <text>Revisar frenos</text>
+        </name>
+      </transition>
+      <transition id="imprimir_detalle_defectos">
+        <name>
+          <text>Imprimir detalle defectos</text>
+        </name>
+      </transition>
+      <transition id="firmar_revision_tecnica">
+        <name>
+          <text>Firmar revision tecnica</text>
+        </name>
+      </transition>
+      <transition id="entregar_papeles_a_cliente">
+        <name>
+          <text>Entregar papeles a cliente</text>
+        </name>
+      </transition>
+      <transition id="ingresar_datos_vehiculo">
+        <name>
+          <text>Ingresar datos vehiculo</text>
+        </name>
+      </transition>
+      <transition id="entregar_boleta">
+        <name>
+          <text>Entregar boleta</text>
+        </name>
+      </transition>
+      <transition id="recibir_pago_cliente">
+        <name>
+          <text>Recibir pago cliente</text>
+        </name>
+      </transition>
+      <arc id="134746398457472" source="entregar_papeles_a_cliente" target="sink"/>
+      <arc id="134746379179280" source="p_4" target="revisar_luces"/>
+      <arc id="134746398662928" source="p_8" target="revisar_frenos"/>
+      <arc id="134746379181344" source="p_2" target="revisar_amortiguacion_y_direccion"/>
+      <arc id="134746398450080" source="p_10" target="imprimir_detalle_defectos"/>
+      <arc id="134746398457760" source="p_10" target="firmar_revision_tecnica"/>
+      <arc id="134746398457376" source="p_11" target="entregar_papeles_a_cliente"/>
+      <arc id="134746379177264" source="recibir_pago_cliente" target="p_5"/>
+      <arc id="134746379181872" source="revisar_amortiguacion_y_direccion" target="p_3"/>
+      <arc id="134746378958640" source="revisar_gases" target="p_8"/>
+      <arc id="134746398143680" source="source" target="ingresar_datos_vehiculo"/>
+      <arc id="134746398145216" source="ingresar_datos_vehiculo" target="p_2"/>
+      <arc id="134746379177792" source="revisar_amortiguacion_y_direccion" target="p_4"/>
+      <arc id="134746378958784" source="revisar_luces" target="p_9"/>
+      <arc id="134746379175632" source="p_1" target="recibir_pago_cliente"/>
+      <arc id="134746379177552" source="p_3" target="revisar_gases"/>
+      <arc id="134746398443984" source="revisar_frenos" target="p_10"/>
+      <arc id="134746398457424" source="p_6" target="entregar_papeles_a_cliente"/>
+      <arc id="134746398145120" source="ingresar_datos_vehiculo" target="p_1"/>
+      <arc id="134746379179616" source="p_5" target="entregar_boleta"/>
+      <arc id="134746398457568" source="imprimir_detalle_defectos" target="p_11"/>
+      <arc id="134746379177456" source="entregar_boleta" target="p_6"/>
+      <arc id="134746398663024" source="p_9" target="revisar_frenos"/>
+      <arc id="134746398457712" source="firmar_revision_tecnica" target="p_11"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="sink">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>
